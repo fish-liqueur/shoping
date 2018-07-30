@@ -9,51 +9,62 @@
     </head>
     <body>
         <header>
-            <button id="view-cart">
-                Корзина
-            </button>
+            <div>
+                <img src="img/logo.png" alt=""/>
+            </div>
+            <div><button id="view-cart">
+                    Корзина
+                </button>
+            </div>
         </header>
         <main>
             <div class="goods-all">
                 <div class="goods" id="id-1">
                     <img src="img/hurma.jpg" alt=""/>
                     <h3>Хурма</h3>
-                    <span>Цена:</span><span class="price">100</span><span>р.</span>
-                    <button class="buy">Купить</button>
+                    <div><span>Цена:</span><span class="price">100</span><span>р.</span>
+                        <button class="buy">Купить</button>
+                    </div>
                 </div>
                 <div class="goods"  id="id-2">
                     <img src="img/blueberry.jpg" alt=""/>
                     <h3>Черника</h3>
-                    <span>Цена:</span><span class="price">120</span><span>р.</span>
-                    <button class="buy">Купить</button>
+                    <div><span>Цена:</span><span class="price">120</span><span>р.</span>
+                        <button class="buy">Купить</button>
+                    </div>
                 </div>
                 <div class="goods" id="id-3">
                     <img src="img/kapusta.jpg" alt=""/>
                     <h3>Заячья капуста</h3>
-                    <span>Цена:</span><span class="price">30</span><span>р.</span>
-                    <button class="buy">Купить</button>
+                    <div><span>Цена:</span><span class="price">30</span><span>р.</span>
+                        <button class="buy">Купить</button>
+                    </div>
                 </div>
                 <div class="goods" id="id-4">
                     <img src="img/dyno.jpg" alt=""/>
                     <h3>Динозаврий лук</h3>
-                    <span>Цена:</span><span class="price">80</span><span>р.</span>
-                    <button class="buy">Купить</button>
+                    <div><span>Цена:</span><span class="price">80</span><span>р.</span>
+                        <button class="buy">Купить</button>
+                    </div>
                 </div>
             </div>
             <section id="cart-section" class="hide">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Наименование</th><th>Количество</th><th>Цена</th><th>Стоимость</th><th>Удалить</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cart-contents">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Наименование</th><th>Количество</th><th>Цена</th><th>Стоимость</th><th>Удалить</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-contents">
 
-                    </tbody>
-                    <tfoot>
-                        <tr><td colspan="5" id="summa"></td></tr>
-                    </tfoot>
-                </table>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="4">Итого:</td><td id="summa"></td></tr>
+                        </tfoot>
+                    </table>
+                    <span id="close">X</span>
+                </div>
             </section>
         </main>
         <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>

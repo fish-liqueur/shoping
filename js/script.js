@@ -1,9 +1,10 @@
 var cart = [];
 var sum = 0;
 
+
 $(document).ready(function () {
     $(".buy").click(function () {
-        var id = $(this).closest("div").attr('id').replace("id-", "");
+        var id = $(this).parents("div").eq(1).attr('id').replace("id-", "");
         if (typeof cart[id] === 'undefined') {
             cart[id] = 1;
         } else {
@@ -13,15 +14,18 @@ $(document).ready(function () {
 
     $("#view-cart").click(function () {
         dispayCart();
+        toggleTable();
     });
 
     $(document).on("click", ".delete", function () {
-        console.log('hoho');
         var id = $(this).closest("tr").attr('id').replace("cartId-", "");
         delete cart[id];
         dispayCart();
     });
 
+    $("#close").click(function () {
+        toggleTable();
+    });
 
 });
 
@@ -41,4 +45,9 @@ function dispayCart() {
         }
     }
     $("#summa").text(sum);
+
+}
+
+function toggleTable() {
+    $('#cart-section').toggleClass("hide");
 }

@@ -1,36 +1,67 @@
 body {
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
-    min-width: 320px;
-
 }
 
 header {
     background-color: #fff;
-    text-align: right;
     border-bottom: 7px #f00 solid;
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+header div:first-child {
+    flex-basis: 40%;
+    text-align: left;
+    align-self: center;
+}
+
+header div:last-child {
+    flex-basis: 40%;
+    text-align: right;
+    align-self: center;
 }
 
 button {
     cursor: pointer;
     border: none;
+    color: #fffbf5;
+    background-color: #f3ce00;
 }
 
 main {
     background-color: #fff;
 }
 
+tfoot td:first-child {
+    text-align: right;
+}
+
+table {
+    width: 80%;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#cart-section {
+    text-align: center;
+
+    width: 100%;
+}
+
 #view-cart {
-    background-color: #f3ce00;
-    margin: 23px 23px 23px auto;
+
     padding: 10px;
-    color: #fffbf5;
     border-radius: 6px;
 }
 
 .goods-all {
     margin-top: 23px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .goods {
@@ -38,9 +69,28 @@ main {
     padding: 5px;
     border-radius: 6px;
     border: 1px solid #f00;
-    width: 20%;
-    display: inline-block;
-/*    height: 225px;*/
+    flex-basis: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.goods > div {
+    align-self: flex-end;
+    flex-basis: 100%;
+}
+
+.goods h3 {
+    align-self: flex-end;
+}
+
+.goods button {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.goods button, .goods span {
+    vertical-align: middle;
 }
 
 .goods img {
@@ -53,3 +103,57 @@ main {
 .hide {
     display: none !important;
 }
+
+#close {
+    cursor: pointer;
+}
+
+#cart-section {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.7);
+    padding: 0;
+    display: flex;
+}
+
+#cart-section > div {
+    margin: auto;
+
+    padding: 15px;
+    position: relative;
+}
+
+#close {
+    position: absolute;
+    right: -9px;
+    top: -5px;
+    z-index: 101;
+    cursor: pointer;
+    padding: 1px 5px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+
+@media (max-width: 560px) and (min-width: 361px) {
+    .goods {
+        flex-basis: 40%;
+    }
+}
+
+@media (max-width: 560px) {
+    #view-cart {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .goods {
+        flex-basis: 90%;
+    }
+}
+
