@@ -10,6 +10,7 @@ $(document).ready(function () {
         } else {
             cart[id]++;
         }
+        cartItemsCount();
     });
 
     $("#view-cart").click(function () {
@@ -20,6 +21,7 @@ $(document).ready(function () {
     $(document).on("click", ".delete", function () {
         var id = $(this).closest("tr").attr('id').replace("cartId-", "");
         delete cart[id];
+        cartItemsCount();
         dispayCart();
     });
 
@@ -50,4 +52,14 @@ function dispayCart() {
 
 function toggleTable() {
     $('#cart-section').toggleClass("hide");
+}
+
+function cartItemsCount() {
+    $.ajax({
+        method: "POST",
+        url: "shopscript/shop.php",
+        data: {crt: cart}
+    }).done(function (itemCount) {
+        $("#view-cart").text("Корзина (" + itemCount + ")");
+    });
 }
